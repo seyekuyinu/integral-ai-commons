@@ -86,7 +86,7 @@ This is where the community question lives. Who defines flourishing? Whose value
 **Framework elements that live here:**
 - The stakeholder map — who is in the room and who is not
 - The principle that communities define their own flourishing
-- The Jacksonville Bridges context — a community learning together
+- A community learning together, say The Jacksonville Bridges cohort, or project teams 
 - The protection of minority voices from majority capture
 - The question: who might be left out?
 
@@ -123,7 +123,7 @@ Wilber maps development through multiple models. For our purposes, four orientat
 
 People here need clear structure, authority, and explicit guidance. Abstract principles are not useful without concrete rules. For this orientation, AI is most accessible when it comes with clear protocols — what to do, what not to do, who to ask.
 
-**What this framework should offer them:** The three-question test. The seven principles as a checklist. Concrete examples like the Bridges business scenarios.
+**What this framework should offer them:** The three-question test. The seven principles as a checklist. Concrete examples.
 
 ### Modern (Achievement-oriented)
 *"Show me the ROI and I will optimize for it."*
@@ -135,7 +135,7 @@ People here need efficiency, results, and measurable outcomes. They will use AI 
 ### Postmodern (Pluralist)
 *"Who is being left out, and why?"*
 
-People here are fluent in equity, inclusion, and power analysis. They are often skeptical of systems — including this one — and rightly so. They want to know whose values are embedded in the infrastructure.
+People here are fluent in equity, inclusion, and power analysis. They are often skeptical of systems, including this one, and rightly so. They want to know whose values are embedded in the infrastructure.
 
 **What this framework should offer them:** The stakeholder map. The community definition of flourishing. The failure modes — especially exclusion drift and capture. The explicit acknowledgment that this framework has a point of view.
 
