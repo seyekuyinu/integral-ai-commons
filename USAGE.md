@@ -1,6 +1,6 @@
 # Using This in Practice
 
-What actually changes when you install this. Not theory — concrete examples of what a session looks like before and after.
+What actually changes when you install this? Well, not theory. This will show you concrete examples of what a session looks like before and after.
 
 ---
 
