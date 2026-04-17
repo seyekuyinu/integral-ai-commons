@@ -2,7 +2,7 @@
 
 ## The philosophical architecture behind Human-Centered AI
 
-This document explains why the framework is structured the way it is. You do not need to read it to use the principles. It is here for anyone who wants to understand the design — and for anyone building on top of it.
+This document explains why the framework is structured the way it is. You do not need to read it to use the principles. It is here for anyone who wants to understand the design. Also, for anyone building on top of it.
 
 ---
 

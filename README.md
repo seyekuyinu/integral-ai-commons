@@ -24,7 +24,7 @@ When an agent loads this, it works differently:
 
 ## Who this is for
 
-Anyone using AI tools to do real work — entrepreneurs, coaches, educators, creatives, builders. Especially useful if you work in or with communities, not just for yourself.
+Anyone using AI tools to do real work: entrepreneurs, coaches, educators, creatives, builders. This is especially useful if you work in or with communities, not just for yourself.
 
 You do not need to be technical to use this. If you use Claude, ChatGPT, Cursor, or any AI assistant, this applies to you.
 
@@ -39,7 +39,7 @@ You do not need to be technical to use this. If you use Claude, ChatGPT, Cursor,
 ├── USAGE.md         ← What actually changes. Concrete examples and real scenarios.
 ├── install.md       ← How to install for Claude Code, Cursor, and other agents.
 ├── docs/
-│   └── bridges-guide.html  ← Plain-language community guide (Jacksonville Bridges Cohort 24)
+│   └── bridges-guide.html  ← Plain-language community guide (for my friends at the Jacksonville Bridges Cohort 24)
 └── README.md        ← You are here.
 ```
 
@@ -79,13 +79,15 @@ Full breakdown in [`PRINCIPLES.md`](./PRINCIPLES.md).
 
 ## The idea behind this
 
-AI tools right now are mostly built as products — owned by companies, priced in tiers, designed to keep you engaged. That model quietly optimizes for the tool, not for you.
+AI tools right now are mostly built as products — owned by companies, priced in tiers, designed to keep you engaged. That model subtly optimizes for the tool, not for you.
 
-This repo treats AI differently: as a shared resource that should expand what people can do, decide, and become — without replacing their judgment, their voice, or their community's right to define what good looks like for them.
+This repo treats AI differently: as a shared resource that should expand what people can do, decide, and become, without replacing their judgment, their voice, or their community's right to define what good looks like for them.
 
 That idea is grounded in a framework that addresses all four dimensions of human experience: interior individual, exterior individual, interior collective, and exterior collective. Most AI frameworks address only one or two. This one attempts all four.
 
 The full philosophical architecture — including the Integral Theory mapping — is in [`INTEGRAL.md`](./INTEGRAL.md). The plain-language community version is in [`docs/bridges-guide.html`](./docs/bridges-guide.html).
+
+Oh, I want to give a special thanks to Dr. Carlton Robinson, Chief Innovation Officer at the JAX Chamber for his presentation on Human-Centered AI as Applied Infrastructure. A huge part of his idea gave me lanaguage for a structure I have wanted to implement within my organization and personally as adoption of AI skyrockets. 
 
 ---
 
@@ -93,7 +95,7 @@ The full philosophical architecture — including the Integral Theory mapping �
 
 If you use this and find something worth changing — a principle that needs sharpening, a behavior the agent gets wrong, a context this doesn't cover — open an issue or submit a PR.
 
-This is meant to evolve through real use, not sit as a finished document.
+This is meant to evolve through real use, not sit as a finished document. 
 
 ---
 
