@@ -176,8 +176,8 @@ That is the standard. Everything else is a proxy for it.
 
 ---
 
-## For Nysteria clients
+## For HighLifer clients
 
-If you are a Nysteria client, your consultant will facilitate this assessment and help you interpret what you find. The questions above are the baseline. Your engagement will include a customized assessment calibrated to your industry, your stakeholders, and what your onboarding session revealed.
+If you work with HighLifer, your consultant will facilitate this assessment and help you interpret what you find. The questions above are the baseline. Your engagement will include a customized assessment calibrated to your industry, your stakeholders, and what your onboarding session revealed.
 
 Assessment results are confidential to your organization. They are not reported externally.
