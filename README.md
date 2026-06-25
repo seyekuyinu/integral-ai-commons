@@ -38,6 +38,8 @@ You do not need to be technical to use this. If you use Claude, ChatGPT, Cursor,
 ├── INTEGRAL.md      ← The philosophical architecture. Integral Theory mapping of the full framework.
 ├── USAGE.md         ← What actually changes. Concrete examples and real scenarios.
 ├── install.md       ← How to install for Claude Code, Cursor, and other agents.
+├── org/             ← Team layer: org operating model, onboarding, and the Commons.
+│   └── commons/     ← Optional shared decision layer for teams sharing one repo.
 ├── docs/
 │   └── bridges-guide.html  ← Plain-language community guide (for my friends at the Jacksonville Bridges Cohort 24)
 └── README.md        ← You are here.
@@ -60,6 +62,27 @@ curl -o ~/.claude/CLAUDE.md https://raw.githubusercontent.com/your-username/huma
 That's it. Claude Code reads `CLAUDE.md` automatically at session start.
 
 For other agents and tools, see [`install.md`](./install.md).
+
+---
+
+## Working with a team? Add the Commons
+
+Everything above is for *you and your agent*. If several teammates share one
+repo and their own AI access, you hit two problems: each session burns tokens
+re-deriving the same context, and each agent quietly makes its own decisions.
+
+The **Commons** is an opt-in shared decision layer — a committed `commons/`
+folder that every agent reads as the team's source of truth, with new entries
+gated behind human ratification. It cuts redundant token use and keeps the team
+converged.
+
+Add it with one command:
+
+```bash
+bash org/commons/init-commons.sh /path/to/your/repo
+```
+
+Full guide: [`org/ORG-COMMONS.md`](./org/ORG-COMMONS.md).
 
 ---
 

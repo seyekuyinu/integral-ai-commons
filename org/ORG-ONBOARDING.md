@@ -149,6 +149,19 @@ These don't need to be big. They need to be real.
 
 ---
 
+## If your team shares a codebase
+
+The session above is about how your team *relates* to AI. If your team also
+*builds* in a shared repository with their own AI access, add the **Commons**
+(`org/ORG-COMMONS.md`) — an opt-in `commons/` folder that becomes the team's
+shared source of truth for settled facts and decisions. It stops every agent
+re-deriving the same context (which maxes out tokens) and keeps teammates'
+agents converged, with new entries gated behind human ratification.
+
+This is optional and technical-leaning — skip it for non-engineering teams.
+
+---
+
 ## Facilitation notes
 
 **If the room is skeptical of AI entirely:**
