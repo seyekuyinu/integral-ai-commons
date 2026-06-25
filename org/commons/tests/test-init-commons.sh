@@ -29,4 +29,11 @@ grep -q '^PRE-EXISTING$' "$TARGET/CLAUDE.md" || fail "existing CLAUDE.md content
 grep -q '^## The Commons (team shared decision layer)$' "$TARGET/CLAUDE.md" \
   || fail "block not appended to existing CLAUDE.md"
 
+# Re-run does not clobber existing commons layer files
+SENTINEL="SENTINEL-CLOBBER-TEST"
+echo "$SENTINEL" > "$TARGET/commons/INDEX.md"
+bash "$INIT" "$TARGET"
+grep -q "$SENTINEL" "$TARGET/commons/INDEX.md" \
+  || fail "commons/INDEX.md was clobbered on re-run"
+
 echo "PASS"

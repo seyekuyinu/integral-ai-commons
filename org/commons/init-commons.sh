@@ -32,7 +32,7 @@ fi
 
 # 2. Inject the read-loop block into CLAUDE.md, once
 CLAUDE="$TARGET/CLAUDE.md"
-if [ -f "$CLAUDE" ] && grep -q "^${MARKER}\$" "$CLAUDE"; then
+if [ -f "$CLAUDE" ] && grep -Fq "$MARKER" "$CLAUDE"; then
   echo "skip: CLAUDE.md already has the Commons block"
 else
   { [ -f "$CLAUDE" ] && printf '\n'; cat "$TEMPLATES/CLAUDE-BLOCK.md"; } >> "$CLAUDE"
