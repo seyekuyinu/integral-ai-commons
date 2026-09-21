@@ -1,82 +1,51 @@
-# Human-Centered AI
+# Integral AI Commons
 
 > *The human is not here to serve the tools. The tools are here to serve the human.*
 
-A lightweight, installable operating model for AI agents — shaping how they work *with* you, not just *for* you.
+A human-centered operating model for AI agents — installable into Claude Code,
+Cursor, Codex, and anything else that reads an `AGENTS.md`.
 
 ---
 
 ## What this is
 
-This is not a framework for building AI products. It is a set of principles and instructions that change how an AI agent *relates* to you when you work together.
+This is not a framework for building AI products. It is a set of principles, and
+the mechanisms that enforce them, that change how an AI agent *relates* to you
+when you work together.
 
-Most AI tools are optimized for output. This is optimized for **you** — your judgment, your voice, your growth, your community.
+Most AI tooling is optimized for output. This is optimized for **you** — your
+judgment, your voice, your growth, your community.
 
-When an agent loads this, it works differently:
+It comes in three layers. Take as many as you need:
 
-- It handles tasks that have no soul so you can focus on the ones that do
-- It keeps your voice yours — not generic, not corporate, not AI-sounding
-- It steps back when decisions belong to you
-- It names when you are becoming dependent on it rather than more capable
-- It asks who might be left out when the work touches other people
-
----
-
-## Who this is for
-
-Anyone using AI tools to do real work: entrepreneurs, coaches, educators, creatives, builders. This is especially useful if you work in or with communities, not just for yourself.
-
-You do not need to be technical to use this. If you use Claude, ChatGPT, Cursor, or any AI assistant, this applies to you.
+| Layer | For | Start at |
+|---|---|---|
+| **The Commons** | A team sharing one repo and one source of truth | [`org/ORG-COMMONS.md`](./org/ORG-COMMONS.md) |
+| **The principles** | You and your agent | [`AGENTS.md`](./AGENTS.md) |
+| **The plugin** | Principles that fire, instead of prose that drifts | [`plugin/`](./plugin/README.md) |
 
 ---
 
-## What's in this repo
+## The Commons — a shared decision layer for teams
 
-```
-├── CLAUDE.md        ← The core file. Load this into any Claude Code session.
-├── PRINCIPLES.md    ← The seven principles, in plain language and agent-readable form.
-├── INTEGRAL.md      ← The philosophical architecture. Integral Theory mapping of the full framework.
-├── USAGE.md         ← What actually changes. Concrete examples and real scenarios.
-├── install.md       ← How to install for Claude Code, Cursor, and other agents.
-├── org/             ← Team layer: org operating model, onboarding, and the Commons.
-│   └── commons/     ← Optional shared decision layer for teams sharing one repo.
-├── docs/
-│   └── bridges-guide.html  ← Plain-language community guide (for my friends at the Jacksonville Bridges Cohort 24)
-└── README.md        ← You are here.
-```
+This is the part of the project that is a mechanism rather than a statement, and
+it solves a problem that arrived with multi-agent teams.
 
----
+When several teammates each have their own AI access on the **same** repo, two
+things go wrong at once:
 
-## Quick install (Claude Code)
+- **Token maxing.** Every session re-reads the same context and re-derives the
+  same conclusions. Redundant work, multiplied by headcount.
+- **Divergent truth.** Each person's agent makes its own local calls. Nothing
+  accumulates into a shared record, so the agents quietly disagree.
 
-Copy `CLAUDE.md` into the root of your project or your home `~/.claude/` directory:
+The Commons is a `commons/` folder committed to your shared repo: an always-read
+`INDEX.md`, three layer files for settled context, engineering, and product
+decisions, and a `proposals/` inbox. Agents read it as closed. Agents may
+*propose* — **only a human ratifies.**
 
-```bash
-# For a specific project
-curl -o CLAUDE.md https://raw.githubusercontent.com/your-username/human-centered-ai/main/CLAUDE.md
-
-# For global use across all Claude Code sessions
-curl -o ~/.claude/CLAUDE.md https://raw.githubusercontent.com/your-username/human-centered-ai/main/CLAUDE.md
-```
-
-That's it. Claude Code reads `CLAUDE.md` automatically at session start.
-
-For other agents and tools, see [`install.md`](./install.md).
-
----
-
-## Working with a team? Add the Commons
-
-Everything above is for *you and your agent*. If several teammates share one
-repo and their own AI access, you hit two problems: each session burns tokens
-re-deriving the same context, and each agent quietly makes its own decisions.
-
-The **Commons** is an opt-in shared decision layer — a committed `commons/`
-folder that every agent reads as the team's source of truth, with new entries
-gated behind human ratification. It cuts redundant token use and keeps the team
-converged.
-
-Add it with one command:
+That last line is the whole point. It is human agency implemented as a data
+structure rather than described in a paragraph.
 
 ```bash
 bash org/commons/init-commons.sh /path/to/your/repo
@@ -86,7 +55,27 @@ Full guide: [`org/ORG-COMMONS.md`](./org/ORG-COMMONS.md).
 
 ---
 
-## The seven principles
+## The principles — for you and your agent
+
+When an agent loads [`AGENTS.md`](./AGENTS.md), it is asked to work differently:
+
+- Handle tasks that have no soul so you can focus on the ones that do
+- Keep your voice yours — not generic, not corporate, not AI-sounding
+- Step back when decisions belong to you
+- Name when you are becoming dependent on it rather than more capable
+- Ask who might be left out when the work touches other people
+
+### Quick install
+
+```bash
+curl -o AGENTS.md https://raw.githubusercontent.com/seyekuyinu/integral-ai-commons/main/AGENTS.md
+```
+
+That one file covers Claude Code, Cursor, Codex, Gemini CLI, and anything else
+that has adopted the convention. For global installs, `.cursor/rules`, and
+claude.ai, see [`install.md`](./install.md).
+
+### The seven principles
 
 1. **Amplify, don't replace** — AI enhances human judgment. It does not substitute for it.
 2. **Access belongs to everyone** — Don't build or recommend systems that create new gatekeeping.
@@ -100,28 +89,103 @@ Full breakdown in [`PRINCIPLES.md`](./PRINCIPLES.md).
 
 ---
 
+## The plugin — principles that run
+
+A file in context is a request an agent can drift from. A skill fires when its
+trigger conditions are met.
+
+```
+/plugin marketplace add seyekuyinu/integral-ai-commons
+/plugin install human-centered-ai
+```
+
+Three skills: an agency check before decisions that are yours, a dependency check
+when deferral becomes a pattern, and a voice check before anything you send under
+your own name. See [`plugin/README.md`](./plugin/README.md).
+
+---
+
+## Does any of this actually work?
+
+Sometimes not, and the repo says so.
+
+[`EVIDENCE.md`](./EVIDENCE.md) holds tests of whether loading the file changes
+agent behavior, reported as they came out. The first test — nine runs across
+three arms on a decision the agent should have handed back — found **no
+measurable effect**. The file did not change what the agent did.
+
+That result stays published. A framework that only shows its wins is the thing it
+warns you about.
+
+---
+
+## Who this is for
+
+Anyone using AI tools to do real work: entrepreneurs, coaches, educators,
+creatives, builders. Especially useful if you work in or with communities, not
+just for yourself.
+
+You do not need to be technical. If you use Claude, ChatGPT, Cursor, or any AI
+assistant, this applies to you. The plain-language version is in
+[`docs/bridges-guide.html`](./docs/bridges-guide.html).
+
+---
+
+## What's in this repo
+
+```
+├── AGENTS.md        ← The core file. Portable across agents. Start here.
+├── CLAUDE.md        ← A pointer to AGENTS.md, for Claude Code.
+├── PRINCIPLES.md    ← The seven principles, for humans and for agents.
+├── INTEGRAL.md      ← The philosophical architecture. Integral Theory mapping.
+├── USAGE.md         ← What actually changes. Concrete examples.
+├── EVIDENCE.md      ← Tests of whether it works, including the failures.
+├── install.md       ← Installing for Claude Code, Cursor, and other agents.
+├── plugin/          ← Claude Code plugin: the principles as skills that fire.
+├── org/             ← Team layer: org operating model, onboarding, and the Commons.
+│   └── commons/     ← The shared decision layer scaffolder and templates.
+└── docs/
+    ├── bridges-guide.html  ← Plain-language community guide.
+    └── evidence/           ← Raw transcripts from the tests in EVIDENCE.md.
+```
+
+---
+
 ## The idea behind this
 
-AI tools right now are mostly built as products — owned by companies, priced in tiers, designed to keep you engaged. That model subtly optimizes for the tool, not for you.
+AI tools right now are mostly built as products — owned by companies, priced in
+tiers, designed to keep you engaged. That model subtly optimizes for the tool,
+not for you.
 
-This repo treats AI differently: as a shared resource that should expand what people can do, decide, and become, without replacing their judgment, their voice, or their community's right to define what good looks like for them.
+This repo treats AI differently: as a shared resource that should expand what
+people can do, decide, and become, without replacing their judgment, their voice,
+or their community's right to define what good looks like for them.
 
-That idea is grounded in a framework that addresses all four dimensions of human experience: interior individual, exterior individual, interior collective, and exterior collective. Most AI frameworks address only one or two. This one attempts all four.
+That idea is grounded in a framework that addresses all four dimensions of human
+experience: interior individual, exterior individual, interior collective, and
+exterior collective. Most AI frameworks address only one or two. This one
+attempts all four. The full architecture is in [`INTEGRAL.md`](./INTEGRAL.md).
 
-The full philosophical architecture — including the Integral Theory mapping — is in [`INTEGRAL.md`](./INTEGRAL.md). The plain-language community version is in [`docs/bridges-guide.html`](./docs/bridges-guide.html).
-
-Oh, I want to give a special thanks to Dr. Carlton Robinson, Chief Innovation Officer at the JAX Chamber for his presentation on Human-Centered AI as Applied Infrastructure. A huge part of his idea gave me lanaguage for a structure I have wanted to implement within my organization and personally as adoption of AI skyrockets. 
+Special thanks to Dr. Carlton Robinson, Chief Innovation Officer at the JAX
+Chamber, for his presentation on Human-Centered AI as Applied Infrastructure. A
+huge part of his idea gave me language for a structure I have wanted to implement
+within my organization, and personally, as adoption of AI skyrockets.
 
 ---
 
 ## How to contribute
 
-If you use this and find something worth changing — a principle that needs sharpening, a behavior the agent gets wrong, a context this doesn't cover — open an issue or submit a PR.
+If you use this and find something worth changing — a principle that needs
+sharpening, a behavior the agent gets wrong, a context this doesn't cover — open
+an issue or a PR.
 
-This is meant to evolve through real use, not sit as a finished document. 
+Test results are the most valuable contribution, and **negative results are
+welcome**. See the contributing note at the end of [`EVIDENCE.md`](./EVIDENCE.md).
+
+This is meant to evolve through real use, not sit as a finished document.
 
 ---
 
 ## License
 
-MIT. Use it, fork it, build on it.
+MIT. See [`LICENSE`](./LICENSE). Use it, fork it, build on it.
