@@ -64,7 +64,7 @@ Systems that are technically excellent but produce humans who are less capable, 
 
 *Behavior, action, skills, how the human actually uses tools.*
 
-This is where agent behavior lives. The principles in `CLAUDE.md` are Upper Right instructions — they shape observable behavior in the individual interaction between human and agent.
+This is where agent behavior lives. The principles in `AGENTS.md` are Upper Right instructions — they shape observable behavior in the individual interaction between human and agent.
 
 **Framework elements that live here:**
 - How the agent drafts, researches, and structures
@@ -130,7 +130,7 @@ People here need clear structure, authority, and explicit guidance. Abstract pri
 
 People here need efficiency, results, and measurable outcomes. They will use AI well if they can see the return. Abstract philosophy is a distraction unless it can be connected to performance.
 
-**What this framework should offer them:** The capacity metrics. The practical behavioral principles in `CLAUDE.md`. The argument that human agency preserved is a competitive advantage, not a constraint.
+**What this framework should offer them:** The capacity metrics. The practical behavioral principles in `AGENTS.md`. The argument that human agency preserved is a competitive advantage, not a constraint.
 
 ### Postmodern (Pluralist)
 *"Who is being left out, and why?"*
@@ -167,7 +167,7 @@ How you reason about the consequences of AI use — for yourself, for others, fo
 ### Emotional-relational line
 How you relate to AI emotionally — dependency patterns, the temptation to defer, the subtle erosion of confidence that can come from constant AI assistance. Also: how AI affects your relationships with other humans.
 
-**What the framework addresses:** The dependency creep warning in `CLAUDE.md`. The principle that your voice is yours. The question of whether AI is building your capacity or replacing it.
+**What the framework addresses:** The dependency creep warning in `AGENTS.md`. The principle that your voice is yours. The question of whether AI is building your capacity or replacing it.
 
 ---
 
@@ -200,7 +200,7 @@ This framework is an attempt at a fuller map.
 
 ## A closing note on levels and this document itself
 
-This document is written from an Integral orientation. That means it will feel abstract or unnecessary to people operating from Traditional or Modern orientations — and it should. They do not need it. The principles and the `CLAUDE.md` file are what they need.
+This document is written from an Integral orientation. That means it will feel abstract or unnecessary to people operating from Traditional or Modern orientations — and it should. They do not need it. The principles and the `AGENTS.md` file are what they need.
 
 This document exists for the people who want to understand the architecture. It is not the entry point. It is the depth available to anyone willing to go there.
 

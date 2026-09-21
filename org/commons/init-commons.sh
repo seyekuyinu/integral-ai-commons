@@ -30,13 +30,22 @@ else
   echo "created: commons/proposals/EXAMPLE.md"
 fi
 
-# 2. Inject the read-loop block into CLAUDE.md, once
-CLAUDE="$TARGET/CLAUDE.md"
-if [ -f "$CLAUDE" ] && grep -Fq "$MARKER" "$CLAUDE"; then
-  echo "skip: CLAUDE.md already has the Commons block"
+# 2. Inject the read-loop block into the agent instruction file, once.
+#    Prefer AGENTS.md (portable across agents); fall back to an existing
+#    CLAUDE.md so repos that predate the convention are not split in two.
+if [ -f "$TARGET/AGENTS.md" ]; then
+  AGENTFILE="$TARGET/AGENTS.md"
+elif [ -f "$TARGET/CLAUDE.md" ]; then
+  AGENTFILE="$TARGET/CLAUDE.md"
 else
-  { [ -f "$CLAUDE" ] && printf '\n'; cat "$TEMPLATES/CLAUDE-BLOCK.md"; } >> "$CLAUDE"
-  echo "injected: Commons block into CLAUDE.md"
+  AGENTFILE="$TARGET/AGENTS.md"
+fi
+AGENTNAME="$(basename "$AGENTFILE")"
+if [ -f "$AGENTFILE" ] && grep -Fq "$MARKER" "$AGENTFILE"; then
+  echo "skip: $AGENTNAME already has the Commons block"
+else
+  { [ -f "$AGENTFILE" ] && printf '\n'; cat "$TEMPLATES/CLAUDE-BLOCK.md"; } >> "$AGENTFILE"
+  echo "injected: Commons block into $AGENTNAME"
 fi
 
 echo "Commons ready in $TARGET/commons"

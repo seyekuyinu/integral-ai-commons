@@ -6,70 +6,125 @@ No technical background required for the basic install. The advanced options are
 
 ---
 
-## Claude Code
+## The file to install
 
-Claude Code reads `CLAUDE.md` automatically at the start of every session. There are two ways to install — project-level and global.
+The canonical file is **`AGENTS.md`**. It is plain markdown with no tool-specific
+syntax, and it is the file most coding agents now read by convention — Claude
+Code, Codex, Cursor, Gemini CLI, and others.
 
-### Project-level (one project only)
+Installing one portable file instead of one file per tool is principle 6 in
+practice: no lock-in, nothing to re-copy when you switch tools.
 
-Copy `CLAUDE.md` into the root of your project folder:
-
-```bash
-curl -o CLAUDE.md https://raw.githubusercontent.com/your-username/human-centered-ai/main/CLAUDE.md
-```
-
-Every Claude Code session started inside that folder will load these principles automatically.
-
-### Global (all projects)
-
-Copy `CLAUDE.md` into your home `.claude` directory so it loads for every session, regardless of which project you are in:
+Throughout this page:
 
 ```bash
-# Create the directory if it doesn't exist
-mkdir -p ~/.claude
-
-# Download CLAUDE.md globally
-curl -o ~/.claude/CLAUDE.md https://raw.githubusercontent.com/your-username/human-centered-ai/main/CLAUDE.md
+RAW=https://raw.githubusercontent.com/seyekuyinu/integral-ai-commons/main
 ```
-
-**Note:** If you already have a `CLAUDE.md` in a project folder, that file takes precedence over the global one. You can also append the contents of this file to an existing `CLAUDE.md` rather than replacing it.
 
 ---
 
-## Claude (claude.ai)
+## Any agent that reads `AGENTS.md` (recommended)
 
-If you use Claude in the browser or app rather than Claude Code, you can paste the contents of `CLAUDE.md` directly into a custom system prompt or at the start of a conversation.
+Drop it in your project root:
 
-**To use it once:**
-Open `CLAUDE.md`, copy the full contents, and paste it at the top of your conversation before you start working.
+```bash
+curl -o AGENTS.md $RAW/AGENTS.md
+```
 
-**To use it consistently:**
-In Claude's settings, look for "Custom Instructions" or "System Prompt." Paste the contents of `CLAUDE.md` there. It will apply to all your conversations.
+That covers Claude Code, Codex, Cursor, Gemini CLI, Amp, and anything else that
+has adopted the convention. Start a session in that folder and the principles
+load automatically.
+
+---
+
+## Claude Code
+
+Claude Code reads `AGENTS.md` and `CLAUDE.md`. Either works.
+
+### Project-level (one project only)
+
+```bash
+curl -o AGENTS.md $RAW/AGENTS.md
+```
+
+### Global (all projects)
+
+```bash
+mkdir -p ~/.claude
+curl -o ~/.claude/AGENTS.md $RAW/AGENTS.md
+```
+
+**Note:** A file in your project folder takes precedence over the global one. If
+you already have instructions there, append these rather than replacing them.
+
+### As a plugin (principles that actually run)
+
+A file in context is a request. A plugin is a mechanism. This repo ships one:
+
+```bash
+/plugin marketplace add seyekuyinu/integral-ai-commons
+/plugin install human-centered-ai
+```
+
+You get the principles as always-on context, plus three skills that fire when
+they are relevant — an agency check before consequential actions, a dependency
+check across a working session, and a voice check before anything you will send
+or publish.
+
+See [`plugin/README.md`](./plugin/README.md) for what each one does.
 
 ---
 
 ## Cursor
 
-Cursor supports a `.cursorrules` file in your project root that shapes how the AI behaves.
+Cursor reads `AGENTS.md` in the project root. That is the simplest install:
 
 ```bash
-curl -o .cursorrules https://raw.githubusercontent.com/your-username/human-centered-ai/main/CLAUDE.md
+curl -o AGENTS.md $RAW/AGENTS.md
 ```
 
-Or copy the contents of `CLAUDE.md` manually into your existing `.cursorrules` file.
+If you prefer Cursor's own rules format, it lives in `.cursor/rules/` as `.mdc`
+files with a small frontmatter header. The older single `.cursorrules` file is
+deprecated — do not use it for a new install.
+
+```bash
+mkdir -p .cursor/rules
+{
+  printf -- '---\ndescription: Human-centered AI operating principles\nalwaysApply: true\n---\n\n'
+  curl -s $RAW/AGENTS.md
+} > .cursor/rules/human-centered-ai.mdc
+```
+
+---
+
+## Claude (claude.ai)
+
+If you use Claude in the browser or app rather than Claude Code, paste the
+contents of `AGENTS.md` into a custom system prompt or at the start of a
+conversation.
+
+**To use it once:** open `AGENTS.md`, copy the full contents, and paste it at the
+top of your conversation before you start working.
+
+**To use it consistently:** in Claude's settings, look for "Custom Instructions"
+or "System Prompt" and paste the contents there. It applies to all your
+conversations.
 
 ---
 
 ## Other agents and tools
 
-Any AI tool that supports a system prompt, a custom instructions field, or a context file can load these principles.
+Any AI tool with a system prompt, a custom instructions field, or a context file
+can load these principles.
 
 **The pattern is always the same:**
-1. Open `CLAUDE.md` from this repo
+
+1. Open `AGENTS.md` from this repo
 2. Copy the full contents
 3. Paste into whatever field your tool uses for persistent instructions
 
-Common field names across tools: System Prompt, Custom Instructions, Context, Memory, Persona, Behavior Settings.
+Common field names across tools: System Prompt, Custom Instructions, Context,
+Memory, Persona, Behavior Settings.
 
 ---
 
@@ -79,9 +134,14 @@ After installing, start a session and ask your agent:
 
 > "What principles are guiding how you work with me?"
 
-A properly loaded agent should reflect back the core ideas: amplifying your capability, keeping your voice yours, naming what it doesn't know, and stepping back on decisions that belong to you.
+A properly loaded agent should reflect back the core ideas: amplifying your
+capability, keeping your voice yours, naming what it doesn't know, and stepping
+back on decisions that belong to you.
 
 If it doesn't, the file may not have loaded. Check the location and try again.
+
+For a harder test than self-report, see [`EVIDENCE.md`](./EVIDENCE.md) — it
+compares agent behavior with and without the file on the same task.
 
 ---
 
@@ -91,11 +151,13 @@ This repo evolves through real use. To get the latest version:
 
 ```bash
 # Project-level
-curl -o CLAUDE.md https://raw.githubusercontent.com/your-username/human-centered-ai/main/CLAUDE.md
+curl -o AGENTS.md $RAW/AGENTS.md
 
-# Global
-curl -o ~/.claude/CLAUDE.md https://raw.githubusercontent.com/your-username/human-centered-ai/main/CLAUDE.md
+# Global (Claude Code)
+curl -o ~/.claude/AGENTS.md $RAW/AGENTS.md
 ```
+
+If you installed the plugin, run `/plugin update human-centered-ai` instead.
 
 ---
 

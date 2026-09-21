@@ -49,15 +49,17 @@ bash org/commons/init-commons.sh /path/to/your/repo
 ```
 
 This creates the `commons/` folder and appends a short read-loop block to your
-repo's `CLAUDE.md` (creating it if needed). Re-running is safe — it never
-duplicates the block or overwrites existing entries. Commit the result so
+repo's `AGENTS.md`, creating it if needed. If the repo already has a `CLAUDE.md`
+and no `AGENTS.md`, the block goes there instead, so you are never left with two
+instruction files disagreeing. Re-running is safe — it never duplicates the block
+or overwrites existing entries. Commit the result so
 teammates get it on their next pull.
 
 ---
 
 ## How it works day to day
 
-**Reading.** Because the block is in `CLAUDE.md`, every agent reads
+**Reading.** Because the block is in your agent instruction file, every agent reads
 `commons/INDEX.md` at session start and treats its entries as settled — it won't
 re-explore the stack or re-argue a closed decision. It opens a layer file only
 when a task touches one of its entries.
@@ -92,7 +94,7 @@ mechanical.
 
 ## Where it sits in the framework
 
-The individual `CLAUDE.md` covers one human's interior and behaviour. The
+The individual `AGENTS.md` covers one human's interior and behaviour. The
 Commons operationalizes the *collective* dimensions the philosophy names but a
 solo file can't enact: shared systems and structure (`context.md`,
 `engineering.md`), shared meaning (`product.md`), and human agency (the

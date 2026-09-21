@@ -138,7 +138,7 @@ These don't need to be big. They need to be real.
 **Within 24 hours:**
 - Share the updated non-delegables list with everyone
 - Make sure `ORG-CLAUDE.md` reflects anything that changed in the conversation
-- Send people the link to install `CLAUDE.md` and `ORG-CLAUDE.md` with the instructions from `install.md`
+- Send people the link to install `AGENTS.md` and `ORG-CLAUDE.md` with the instructions from `install.md`
 
 **Within one week:**
 - Check in with one or two people informally — how did it go? Did the three-question test come up?

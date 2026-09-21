@@ -3,16 +3,16 @@
 <!-- 
   HOW TO USE THIS FILE
   
-  This file works alongside CLAUDE.md (the individual operating model).
+  This file works alongside AGENTS.md (the individual operating model).
   Complete ORG-SETUP.md first, then fill in the placeholders below.
   
   Placeholders look like this: [PLACEHOLDER]
   Replace every placeholder with your organization's actual answers.
   Delete all comments (lines starting with <!--) when you are done.
   
-  Place this file at the root of your project or in ~/.claude/ alongside CLAUDE.md.
+  Place this file at the root of your project or in ~/.claude/ alongside AGENTS.md.
   Agents load both files. This one carries the organizational context.
-  The individual CLAUDE.md carries the human-centered behavioral principles.
+  The individual AGENTS.md carries the human-centered behavioral principles.
 -->
 
 ---
@@ -126,7 +126,7 @@ Owner: [NAME OR ROLE]
 
 ## A note for agents loading this file
 
-You are working inside an organization that has thought carefully about how AI should relate to the humans using it. The principles in CLAUDE.md tell you how to behave with individuals. This file tells you who this organization is and what they care about.
+You are working inside an organization that has thought carefully about how AI should relate to the humans using it. The principles in AGENTS.md tell you how to behave with individuals. This file tells you who this organization is and what they care about.
 
 Hold both. When they create tension, surface the tension rather than resolving it silently.
 
