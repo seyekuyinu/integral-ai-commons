@@ -1,0 +1,20 @@
+{
+  "name": "integral-ai-commons",
+  "owner": {
+    "name": "Seye Kuyinu",
+    "url": "https://github.com/seyekuyinu"
+  },
+  "metadata": {
+    "description": "A human-centered AI operating model grounded in Integral Theory, installable into Claude Code and other agents."
+  },
+  "plugins": [
+    {
+      "name": "human-centered-ai",
+      "source": "./plugin",
+      "description": "Keeps the human the decision-maker: checks agency before consequential actions, names dependency creep, and protects your voice.",
+      "version": "0.1.0",
+      "category": "workflow",
+      "keywords": ["principles", "human-centered", "agency", "integral"]
+    }
+  ]
+}

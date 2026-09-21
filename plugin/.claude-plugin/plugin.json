@@ -1,0 +1,12 @@
+{
+  "name": "human-centered-ai",
+  "version": "0.1.0",
+  "description": "Keeps the human the decision-maker: checks agency before consequential actions, names dependency creep, and protects your voice.",
+  "author": {
+    "name": "Seye Kuyinu",
+    "url": "https://github.com/seyekuyinu"
+  },
+  "homepage": "https://github.com/seyekuyinu/integral-ai-commons",
+  "license": "MIT",
+  "keywords": ["principles", "human-centered", "agency", "integral"]
+}
