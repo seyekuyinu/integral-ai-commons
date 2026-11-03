@@ -28,8 +28,13 @@ live, that every agent reads and treats as closed. Agents stop re-deriving
 
 A `commons/` folder committed to your shared repo:
 
-- `INDEX.md` — always-loaded. One line per settled entry. This is what every
-  agent reads at session start.
+- `MAP.md` — the only file every agent loads at session start. It says where
+  each kind of answer lives, one row per area, so it stays small as the team
+  grows.
+- `INDEX.md` — one line per settled entry. Opened when a question asks whether
+  something is already decided.
+- `conventions/` — your team's own way of working, in whatever shape you use:
+  a Definition of Done, a working agreement, a review checklist.
 - `context.md` — shared working memory: stack, key files, gotchas, glossary,
   priorities. The highest-value token saver.
 - `engineering.md` — resolved technical decisions (ADR-style, IDs `ENG-NNN`).
@@ -60,9 +65,24 @@ teammates get it on their next pull.
 ## How it works day to day
 
 **Reading.** Because the block is in your agent instruction file, every agent reads
-`commons/INDEX.md` at session start and treats its entries as settled — it won't
-re-explore the stack or re-argue a closed decision. It opens a layer file only
-when a task touches one of its entries.
+`commons/MAP.md` at session start, and only that. When a question comes up, the
+agent finds its row in the map and opens the one file it points to. It treats
+what it finds as settled — it won't re-explore the stack or re-argue a closed
+decision. This is the token saver at team scale: each session pays for a short
+map plus the one file it needs, not the whole folder.
+
+**Plugging in your conventions.** Every team works differently. Put each of
+your conventions in `commons/conventions/`, named however your team names it,
+with a short frontmatter header that says what questions it answers (see
+`commons/conventions/README.md`). Then run:
+
+```bash
+bash commons/map-conventions.sh
+```
+
+The script lists each convention in `MAP.md` from its header, so the map can't
+drift from the files. Add `bash commons/map-conventions.sh --check` to CI to
+fail any pull request that adds a convention without updating the map.
 
 **Proposing.** When an agent reaches a decision, or learns a project fact, that
 isn't in the commons, it does not write it silently. It drafts a file in
@@ -89,6 +109,13 @@ mechanical.
   minimise merge conflicts. `INDEX.md` is the one hot file.
 - **Prune.** When a decision is reversed, update or remove its entry — a stale
   commons is worse than none.
+- **Keep the map short.** `MAP.md` is the one file every session pays for. Add a
+  row for a new area, never for a single entry; entries belong in `INDEX.md`.
+
+**Upgrading an existing Commons.** Re-running `init-commons.sh` adds `MAP.md`,
+`conventions/`, and `map-conventions.sh` without touching your entries. It does
+not rewrite the block already in your `AGENTS.md`. Replace that block with the
+current `org/commons/templates/CLAUDE-BLOCK.md` so agents start from the map.
 
 ---
 

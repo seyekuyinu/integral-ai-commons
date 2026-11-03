@@ -39,9 +39,11 @@ things go wrong at once:
 - **Divergent truth.** Each person's agent makes its own local calls. Nothing
   accumulates into a shared record, so the agents quietly disagree.
 
-The Commons is a `commons/` folder committed to your shared repo: an always-read
-`INDEX.md`, three layer files for settled context, engineering, and product
-decisions, and a `proposals/` inbox. Agents read it as closed. Agents may
+The Commons is a `commons/` folder committed to your shared repo: a short
+`MAP.md` that is the only file agents load up front, an `INDEX.md` of settled
+decisions, three layer files for context, engineering, and product, a
+`conventions/` folder for your team's own way of working, and a `proposals/`
+inbox. Agents open only the file the map points to and treat it as closed. Agents may
 *propose* — **only a human ratifies.**
 
 That last line is the whole point. It is human agency implemented as a data
