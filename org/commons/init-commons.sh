@@ -14,8 +14,9 @@ if [ ! -d "$TEMPLATES" ]; then
 fi
 
 # 1. Scaffold the commons/ folder (do not overwrite existing layer files)
-mkdir -p "$TARGET/commons/proposals"
-for f in INDEX.md context.md engineering.md product.md; do
+mkdir -p "$TARGET/commons/proposals" "$TARGET/commons/conventions"
+for f in MAP.md INDEX.md context.md engineering.md product.md map-conventions.sh \
+         proposals/EXAMPLE.md conventions/README.md conventions/_TEMPLATE.md; do
   if [ -e "$TARGET/commons/$f" ]; then
     echo "skip: commons/$f already exists"
   else
@@ -23,12 +24,6 @@ for f in INDEX.md context.md engineering.md product.md; do
     echo "created: commons/$f"
   fi
 done
-if [ -e "$TARGET/commons/proposals/EXAMPLE.md" ]; then
-  echo "skip: commons/proposals/EXAMPLE.md already exists"
-else
-  cp "$TEMPLATES/proposals/EXAMPLE.md" "$TARGET/commons/proposals/EXAMPLE.md"
-  echo "created: commons/proposals/EXAMPLE.md"
-fi
 
 # 2. Inject the read-loop block into the agent instruction file, once.
 #    Prefer AGENTS.md (portable across agents); fall back to an existing

@@ -1,7 +1,8 @@
 # Commons Index
 
-> Always-loaded. One line per ratified entry. Agents read this at session start
-> and treat every entry as settled. Full detail lives in the layer files.
+> Opened from MAP.md when a question asks whether something is decided. One
+> line per ratified entry; agents treat every entry as settled. Full detail
+> lives in the layer files.
 > Keep each section append-ordered (newest at the bottom) to minimise merge conflicts.
 
 ## Context
